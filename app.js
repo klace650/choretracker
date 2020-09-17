@@ -75,13 +75,13 @@ function handleSubmit(event){
 
   var name = (event.target.name.value);
   var frequency = parseInt(event.target.frequency.value);
-  
   // var startDate = event.target.startDate.value;
+  
   // ============================================
   // var newChore = new AddChore(name,startDate,frequency);
 
   var newChore = new AddChore(name,frequency);
-  console.log(newChore);
+  // console.log(newChore);
   chores.push(newChore)
 }
 
