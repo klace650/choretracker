@@ -1,15 +1,3 @@
-// function logSubmit(event) {
-//   log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-//   event.preventDefault();
-//   console.log(input1)
-// }
-
-// var form = document.getElementById('form');
-// console.log(form)
-
-// form.addEventListener('submit', logSubmit);
-
-
 // ...........................................................
 // GLOBALS
 var users = [];
