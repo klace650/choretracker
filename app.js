@@ -65,19 +65,26 @@ console.log(chores);
 // ...........................................................
 // EVENT HANDLERS
 // a) may need to use: var name = var startDate = var frequency
-
+// b) took out startDate in all functions/form to isolate why the form data wasn't getting posted into the console. Now its just name and a number from the form.
+// b.1) may need to parse date validation
 
 // handles when user clicks submit on newChore form
 function handleSubmit(event){
   event.preventDefault();
+
+
   var name = (event.target.name.value);
-  // var startDate = event.target.startDate.value;
   var frequency = parseInt(event.target.frequency.value);
+  
+  // var startDate = event.target.startDate.value;
+  // ============================================
+  // var newChore = new AddChore(name,startDate,frequency);
 
   var newChore = new AddChore(name,frequency);
-  // var newChore = new AddChore(name,startDate,frequency);
   console.log(newChore);
+  chores.push(newChore)
 }
+
 
 // ...........................................................
 // EVENT LISTENERS
