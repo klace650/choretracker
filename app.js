@@ -63,27 +63,27 @@ console.log(chores);
 
 // ...........................................................
 // EVENT HANDLERS
-//
-// function newChoreSubmit(event){
-//   // handles when user clicks submit on newChore form
-//   event.preventDefault();
-//   var name = (event.target.name.value);
-//   var frequency = parseInt(event.target.frequency.value);
-//   var startDate = event.target.startDate.value;
-//   var newChore = new AddChore(name,startDate,frequency);
-//   console.log(newChore);
+
+function newChoreSubmit(event){
+  // handles when user clicks submit on newChore form
+  event.preventDefault();
+  var name = (event.target.name.value);
+  var frequency = parseInt(event.target.frequency.value);
+  var startDate = event.target.startDate.value;
+  var newChore = new AddChore(name,startDate,frequency);
+  console.log(newChore);
   
-// }
-function handleSubmit(event){
-  event.preventDefault
-  var name = event.target.name.value;
-  var pin = parseInt(event.target.pin.value);
-  var newUser = new AddUser(name,pin);
-  console.log(newUser);
 }
+// function handleSubmit(event){
+//   event.preventDefault
+//   var name = event.target.name.value;
+//   var pin = parseInt(event.target.pin.value);
+//   var newUser = new AddUser(name,pin);
+//   console.log(newUser);
+// }
 // ...........................................................
 // EVENT LISTENERS
 // 
-// form.addEventListener('submit', newChoreSubmit);
-form.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', newChoreSubmit);
+// form.addEventListener('submit', handleSubmit);
 // ...........................................................
