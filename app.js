@@ -8,21 +8,19 @@ var currentDate = new Date();
 var form = document.getElementById('newChore');
 
 // ...........................................................
-// FUNCTIONS
-// constructors 
-//
+// CONSTRUCTOR FUNCTIONS
+// 
 // Adds users details into global user array
 function AddUser (name, pin){
   this.name = name;
   this.pin = pin;
   users.push(this);
 }
-//
 // Adds chores details into global user array
-function AddChore (name, frequency){
-// function AddChore (name, startDate, frequency){  
+function AddChore (name, startDate, frequency){  
   this.name = name;
-  // this.startDate = startDate;
+  // name of the chore
+  this.startDate = startDate;
   // startDate defined as days from current date.
   this.frequency = frequency;
   // frequency defined as every X day from start day ex: startDate + 1day = scheduled day / chore occurs every 1 day after start date.
@@ -36,7 +34,6 @@ function AddChore (name, frequency){
 
 // ...........................................................
 // FORMS
-
 
 
 
@@ -62,32 +59,31 @@ console.log(chores);
 // ...........................................................
 // ...........................................................
 // ...........................................................
+
+
 // ...........................................................
 // EVENT HANDLERS
-// a) may need to use: var name = var startDate = var frequency
-// b) took out startDate in all functions/form to isolate why the form data wasn't getting posted into the console. Now its just name and a number from the form.
-// b.1) may need to parse date validation
-
-// handles when user clicks submit on newChore form
-function handleSubmit(event){
-  event.preventDefault();
-
-
-  var name = (event.target.name.value);
-  var frequency = parseInt(event.target.frequency.value);
-  // var startDate = event.target.startDate.value;
+//
+// function newChoreSubmit(event){
+//   // handles when user clicks submit on newChore form
+//   event.preventDefault();
+//   var name = (event.target.name.value);
+//   var frequency = parseInt(event.target.frequency.value);
+//   var startDate = event.target.startDate.value;
+//   var newChore = new AddChore(name,startDate,frequency);
+//   console.log(newChore);
   
-  // ============================================
-  // var newChore = new AddChore(name,startDate,frequency);
-
-  var newChore = new AddChore(name,frequency);
-  // console.log(newChore);
-  chores.push(newChore)
+// }
+function handleSubmit(event){
+  event.preventDefault
+  var name = event.target.name.value;
+  var pin = parseInt(event.target.pin.value);
+  var newUser = new AddUser(name,pin);
+  console.log(newUser);
 }
-
-
 // ...........................................................
 // EVENT LISTENERS
 // 
+// form.addEventListener('submit', newChoreSubmit);
 form.addEventListener('submit', handleSubmit);
 // ...........................................................
