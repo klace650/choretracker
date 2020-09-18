@@ -29,13 +29,19 @@ function AddChore (name, startDate, frequency){
 // ...........................................................
 // RENDER
 //
-
-
-
+// AddChore.prototype.renderChoreList=function(){
+//   var choreUL = document.getElementById('choreList');
+//   var choreLI = document.createElement('li');
+//   choreLI.textContent = chores;
+//   choreUL.appendChild(choreLI);
+// }
+// renderChoreList();
+// 
+// 
 // ...........................................................
 // FORMS
-
-
+// 
+getElementById('choreList')
 
 
 // ...........................................................
@@ -47,12 +53,15 @@ new AddUser('Joelle', 555);
 // CHORES
 new AddChore ('Sweep', 0, 1);
 new AddChore ('Dishes', 0, 1);
+new AddChore ('Laundry', 0, 7);
+new AddChore ('Vacuum', 0, 3);
 
 // ...........................................................
 // TEST LOGS
 console.log(new Date());
-// console.log(users);
 console.log(chores);
+console.log(chores[3]);
+// console.log(users);
 // ...........................................................
 // ...........................................................
 // ...........................................................
@@ -70,7 +79,7 @@ function newChoreSubmit(event){
   var name = (event.target.name.value);
   var frequency = parseInt(event.target.frequency.value);
   var startDate = event.target.startDate.value;
-  var newChore = new AddChore(name,startDate,frequency);
+  var newChore = new AddChore(name, startDate, frequency);
   console.log(newChore);
   
 }
