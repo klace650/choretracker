@@ -54,14 +54,22 @@ function Chore(name, repeats, duration, starts){
 // 
 function assignChores(){
   
-  let assignedUser = /* NEEDS TO ITERATE */
+  let assignedUser = userList[0].name;
   let assignChore = choreList[0].name;
+  // console.log(assignChore , assignedUser);
   
-  let userChoreList = 
-  console.log(assignChore , assignedUser);
-  // 
+  // Order and balance the chores by time
+  choreList.forEach(element => {
+    let duration_Unordered =  [];
+    duration_Unordered.push(element.duration);
+    // console.log(duration_Unordered);
+    let orderDuration = duration_Unordered.sort();
+    console.log(orderDuration);
+  });
 }
-assignChores();
+
+
+  // 
 
 // ...........................................................
 ///////////////////////////////////////////////////////////////
@@ -69,11 +77,15 @@ assignChores();
 
 
 // TEST LOGS
-console.log()
+
+// - Logs the duration of all chore times.
+console.log(assignChores());
+
+// - Displays individual chore details at index
 // console.log(choreList[5]);
-// Displays individual chore details at index
+
+// - Displays number of current date
 // console.log(day);
-// Displays number of current date
 
 // ...........................................................
 // ...........................................................
