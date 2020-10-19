@@ -35,51 +35,66 @@ let takeCompost = new Chore('Take out Compost', 7, 10, 0);
 let takeTrash = new Chore('Take out Trash', 7, 20, 0);
 let curbCompost = new Chore ('Put out Compost', 7, 10, 0);
 let curbRecycle = new Chore ('Put out Recycling', 14, 10, 0);
+///////////////////////////////////////////////////////////////
+// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE
+// 
+function sortChores (){
+  // ORDERS DURATIONS OF CHORES BY LOWEST TO HIGHEST
+  let unsorted = [];
+  choreList.forEach( chore => {
+    unsorted.push(chore.duration);
+  });
+  let sorted = unsorted.sort();
+  return sorted;
+}
 
+function assignChores(){
+  let unassigned = sortChores();
+  console.log = unassigned;
+}
+
+// console.log(sortChores());
+
+// 
+///////////////////////////////////////////////////////////////
 // ...........................................................
 // CONSTRUCTOR FUNCTIONS
+
 function User(name){
   this.name = name;
   userList.push(this);
 }
-// 
 function Chore(name, repeats, duration, starts){
   this.name = name;
   this.repeats = repeats;
   this.duration = duration; 
   this.starts = starts;
   choreList.push(this);
+  $('#choreList').append(`<li>${this.name}</li>`);
 };
 // ...........................................................
+// EVENT HANDLERS
+//
+$('#submit').on('click', function(e){
+  e.preventDefault();
+  console.log('yeet');
+});
+// ...........................................................
+// EVENT LISTENERS
 // 
-function assignChores(){
-  
-  let assignedUser = userList[0].name;
-  let assignChore = choreList[0].name;
-  // console.log(assignChore , assignedUser);
-  
-  // Order and balance the chores by time
-  choreList.forEach(element => {
-    let duration_Unordered =  [];
-    duration_Unordered.push(element.duration);
-    // console.log(duration_Unordered);
-    let orderDuration = duration_Unordered.sort();
-    console.log(orderDuration);
-  });
-}
 
 
-  // 
-
+// ...........................................................
 // ...........................................................
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
+
 
 
 // TEST LOGS
 
 // - Logs the duration of all chore times.
-console.log(assignChores());
+// console.log(assignChores());
 
 // - Displays individual chore details at index
 // console.log(choreList[5]);
@@ -94,29 +109,4 @@ console.log(assignChores());
 // ...........................................................
 
 
-// ...........................................................
-// EVENT HANDLERS
-//
-// function newChoreSubmit(event){
-  //   // handles when user clicks submit on newChore form
-  //   event.preventDefault();
-  //   var name = (event.target.name.value);
-  //   var frequency = parseInt(event.target.frequency.value);
-  //   var startDate = event.target.startDate.value;
-  //   var newChore = new AddChore(name,startDate,frequency);
-  //   console.log(newChore);
-  
-  // }
-  // function handleSubmit(event){
-    //   event.preventDefault
-    //   var name = event.target.name.value;
-    //   var pin = parseInt(event.target.pin.value);
-    //   var newUser = new AddUser(name,pin);
-    //   console.log(newUser);
-    // }
-    // ...........................................................
-    // EVENT LISTENERS
-    // 
-    // form.addEventListener('submit', newChoreSubmit);
-    // form.addEventListener('submit', handleSubmit);
-    // ...........................................................
+    

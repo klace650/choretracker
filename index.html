@@ -5,28 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 
   <title>ChoreTracker2020</title>
 </head>
 <body>
   <h1>ChoreTracker2020</h1>
+<ul id="choreList">
+</ul>
+
+<fieldset>
+  <form id="newChore">
+    <label for="newChore"></label>
+    Name <input type="text" placeholder="Name your new chore">
+    <br>
+    <!-- Duration <input type="text" placeholder="How many minutes will it take?">
+    <br>
+    Repeats <input type="text" placeholder="Do again in how many days?">
+    <br>
+    Start On <input type="date" placeholder="Start this chore loop when?">
+    <br> -->
+    <button id="submit">Add to list</button>
+  </form>
+</fieldset>
 
 <!-- <fieldset>
-  
-  <form id="newChore">
-    Chore Name <input type="text" name='name'>
-    Start Date <input type="date" name='startDate'>
-    Frequency<input type="number" name='frequency'>
-    <button type="submit">Add New Chore</button>
-  </form>
-</fieldset> -->
-<fieldset>
   <form id="newUser">
     User Name <input type="text" name='name'>
     PIN <input type="number" name="pin">
     <button type="submit">Add New User</button>
   </form>
-</fieldset>
+</fieldset> -->
 
 </body>
 <script src="app.js"></script>
