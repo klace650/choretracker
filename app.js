@@ -18,6 +18,8 @@ let day = date.getDay();
 // 
 let klace = new User('Klace');
 let joelle = new User('Joelle');
+// let wild = new User ('Wild')
+// let test = new User('Test')
 
 // ...........................................................
 // CHORES
@@ -35,26 +37,52 @@ let takeCompost = new Chore('Take out Compost', 7, 10, 0);
 let takeTrash = new Chore('Take out Trash', 7, 20, 0);
 let curbCompost = new Chore ('Put out Compost', 7, 10, 0);
 let curbRecycle = new Chore ('Put out Recycling', 14, 10, 0);
+
+// let sweep = new Chore('Sweep', 0, 30, 0);
+// let dishes = new Chore('Dishes', 0, 30, 0);
+// let vacuum = new Chore('Vacuum', 5, 20, 0);
+// let unloadDish = new Chore('Unload Dishwasher', 1, 15, 0);
+// let loadDish = new Chore('Load Dishwasher', 1, 15, 0);
+// let tidyKitchen = new Chore('Tidy Kitchen', 0, 20, 0);
+// let laundry = new Chore ('Laundry', 6, 90, 0);
+// let cleanKitchen = new Chore('Clean Kitchen', 4, 30, 0);
+// let cleanFridge = new Chore('Clean Out Fridge', 7, 20, 0);
+// let takeCompost = new Chore('Take out Compost', 7, 10, 0);
+// let takeTrash = new Chore('Take out Trash', 7, 20, 0);
+// let curbCompost = new Chore ('Put out Compost', 7, 10, 0);
+// let curbRecycle = new Chore ('Put out Recycling', 14, 10, 0);
+
 ///////////////////////////////////////////////////////////////
 // WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE
-// 
-function sortChores (){
-  // ORDERS DURATIONS OF CHORES BY LOWEST TO HIGHEST
-  let unsorted = [];
-  choreList.forEach( chore => {
-    unsorted.push(chore.duration);
-  });
-  let sorted = unsorted.sort();
-  return sorted;
-}
 
-function assignChores(){
-  let unassigned = sortChores();
-  console.log = unassigned;
-}
+choreList.forEach(item => {
+  $('li').append(pickUser(name));
+});
 
-// console.log(sortChores());
+function pickUser(){
+  let x = Math.floor(Math.random() * userList.length);
+  console.log(userList[x]);
+};
+pickUser();
 
+
+
+
+
+
+
+
+
+
+// function sortChores (){
+//   // ORDERS DURATIONS OF CHORES BY LOWEST TO HIGHEST
+//   let unsorted = [];
+//   choreList.forEach( chore => {
+//     unsorted.push(chore.duration);
+//   });
+//   let sorted = unsorted.sort();
+//   return sorted;
+// }
 // 
 ///////////////////////////////////////////////////////////////
 // ...........................................................
@@ -72,6 +100,7 @@ function Chore(name, repeats, duration, starts){
   choreList.push(this);
   $('#choreList').append(`<li>${this.name}</li>`);
 };
+
 // ...........................................................
 // EVENT HANDLERS
 //
