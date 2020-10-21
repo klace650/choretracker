@@ -3,14 +3,14 @@ fieldset{
   height: auto;
 
   margin: 5px;
-  border: 5px solid black;
+  border: 5px solid blue;
   padding: 5px;
 
 }
 #choreList {
   width: 25%;
   height: auto;
-  border: 5px solid black;
+  border: 5px solid green;
   padding: 5px;
   margin: 5px;
 
@@ -19,6 +19,15 @@ h1{
   text-align: center;
   width: 25%;
   margin: 5px;
-  border: 5px solid black;
+  border: 5px solid red;
   padding: 5px;
+}
+li{
+  float: right;
+  margin: 5px;
+  border: 5px solid orange;
+  padding: 5px;
+}
+ul{
+  float: left;
 }

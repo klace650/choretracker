@@ -13,101 +13,68 @@ let day = date.getDay();
 // 4 THURSDAY
 // 5 FRIDAY
 // 6 SATURDAY
+// 7 EVERYDAY
+
+// - Displays number of current date
+// console.log(day);
 
 // USERS
 // 
 let klace = new User('Klace');
 let joelle = new User('Joelle');
-// let wild = new User ('Wild')
-// let test = new User('Test')
 
-// ...........................................................
 // CHORES
-
-let sweep = new Chore('Sweep', 0, 30, 0);
-let dishes = new Chore('Dishes', 0, 30, 0);
-let vacuum = new Chore('Vacuum', 5, 20, 0);
-let unloadDish = new Chore('Unload Dishwasher', 1, 15, 0);
-let loadDish = new Chore('Load Dishwasher', 1, 15, 0);
-let tidyKitchen = new Chore('Tidy Kitchen', 0, 20, 0);
-let laundry = new Chore ('Laundry', 6, 90, 0);
-let cleanKitchen = new Chore('Clean Kitchen', 4, 30, 0);
-let cleanFridge = new Chore('Clean Out Fridge', 7, 20, 0);
-let takeCompost = new Chore('Take out Compost', 7, 10, 0);
-let takeTrash = new Chore('Take out Trash', 7, 20, 0);
-let curbCompost = new Chore ('Put out Compost', 7, 10, 0);
-let curbRecycle = new Chore ('Put out Recycling', 14, 10, 0);
-
-// let sweep = new Chore('Sweep', 0, 30, 0);
-// let dishes = new Chore('Dishes', 0, 30, 0);
-// let vacuum = new Chore('Vacuum', 5, 20, 0);
-// let unloadDish = new Chore('Unload Dishwasher', 1, 15, 0);
-// let loadDish = new Chore('Load Dishwasher', 1, 15, 0);
-// let tidyKitchen = new Chore('Tidy Kitchen', 0, 20, 0);
-// let laundry = new Chore ('Laundry', 6, 90, 0);
-// let cleanKitchen = new Chore('Clean Kitchen', 4, 30, 0);
-// let cleanFridge = new Chore('Clean Out Fridge', 7, 20, 0);
-// let takeCompost = new Chore('Take out Compost', 7, 10, 0);
-// let takeTrash = new Chore('Take out Trash', 7, 20, 0);
-// let curbCompost = new Chore ('Put out Compost', 7, 10, 0);
-// let curbRecycle = new Chore ('Put out Recycling', 14, 10, 0);
-
-///////////////////////////////////////////////////////////////
-// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE
-
-choreList.forEach(item => {
-  $('li').append(pickUser(name));
-});
-
-function pickUser(){
-  let x = Math.floor(Math.random() * userList.length);
-  console.log(userList[x]);
-};
-pickUser();
-
-
-
-
-
-
-
-
-
-
-// function sortChores (){
-//   // ORDERS DURATIONS OF CHORES BY LOWEST TO HIGHEST
-//   let unsorted = [];
-//   choreList.forEach( chore => {
-//     unsorted.push(chore.duration);
-//   });
-//   let sorted = unsorted.sort();
-//   return sorted;
-// }
 // 
-///////////////////////////////////////////////////////////////
+// ------------might need to parse
+new Chore('sweep');
+new Chore('dishes');
+new Chore('vacuum');
+new Chore('unload');
+new Chore('load');
+new Chore('tidy');
+new Chore ('laundry');
+new Chore('kitchen');
+new Chore('fridge');
+new Chore('compost');
+new Chore('landfill');
+new Chore ('recycling');
+new Chore ('curb');
+
 // ...........................................................
 // CONSTRUCTOR FUNCTIONS
 
 function User(name){
   this.name = name;
   userList.push(this);
-}
-function Chore(name, repeats, duration, starts){
+};
+function Chore(name, des, start, doEvery){
   this.name = name;
-  this.repeats = repeats;
-  this.duration = duration; 
-  this.starts = starts;
+  this.des = des;
+  this.start = start;
+  this.doEvery = doEvery;
   choreList.push(this);
   $('#choreList').append(`<li>${this.name}</li>`);
 };
+///////////////////////////////////////////////////////////////
+// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE
+  $('li').append(`<input type="checkbox" id="${this.name}box">`);
 
+
+///////////////////////////////////////////////////////////////
 // ...........................................................
 // EVENT HANDLERS
-//
-$('#submit').on('click', function(e){
-  e.preventDefault();
-  console.log('yeet');
-});
+
+document.getElementById('submit').addEventListener('click', addChore);
+
+function addChore (event){
+  event.preventDefault();
+  let input = choreName.value
+  console.log(input);
+}
+
+
+
+
 // ...........................................................
 // EVENT LISTENERS
 // 
@@ -119,17 +86,6 @@ $('#submit').on('click', function(e){
 ///////////////////////////////////////////////////////////////
 
 
-
-// TEST LOGS
-
-// - Logs the duration of all chore times.
-// console.log(assignChores());
-
-// - Displays individual chore details at index
-// console.log(choreList[5]);
-
-// - Displays number of current date
-// console.log(day);
 
 // ...........................................................
 // ...........................................................
