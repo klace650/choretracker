@@ -54,44 +54,34 @@ function Chore(name, des, start, doEvery){
   this.doEvery = doEvery;
   choreList.push(this);
   $('#choreList').append(`<li>${this.name}</li>`);
+  $('li').last().append(`<input type="checkbox" id=bibs>`);
+
 };
-///////////////////////////////////////////////////////////////
-// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE
-  $('li').append(`<input type="checkbox" id="${this.name}box">`);
 
+////////////////////////////////////////////////////////////////////////
+// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE //
 
-///////////////////////////////////////////////////////////////
-// ...........................................................
-// EVENT HANDLERS
-
-document.getElementById('submit').addEventListener('click', addChore);
-
-function addChore (event){
-  event.preventDefault();
-  let input = choreName.value
-  console.log(input);
-}
-
-
+// WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE //
+//////////////////////////////////////////////////////////////////////
 
 
 // ...........................................................
 // EVENT LISTENERS
 // 
-
-
-// ...........................................................
-// ...........................................................
-///////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-
-
+document.getElementById('submit').addEventListener('click', addChore);
 
 // ...........................................................
-// ...........................................................
-// ...........................................................
-// ...........................................................
-// ...........................................................
+
+// EVENT HANDLERS
+function addChore (event){
+  event.preventDefault();
+  new Chore(choreName.value);
+}
 
 
-    
+function choreDone(){
+  document.getElementById('li').checked = true;
+    console.log('OH YIS');
+}
+choreDone();
+// ...........................................................
