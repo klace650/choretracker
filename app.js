@@ -20,46 +20,60 @@ let day = date.getDay();
 
 // USERS
 // 
-let klace = new User('Klace');
-let joelle = new User('Joelle');
+new User('Klace');
+new User('Joelle');
+new User('Guest');
+new User('Wild');
 
 // CHORES
 // 
 // ------------might need to parse
-new Chore('sweep');
-new Chore('dishes');
-new Chore('vacuum');
-new Chore('unload');
-new Chore('load');
-new Chore('tidy');
-new Chore ('laundry');
-new Chore('kitchen');
-new Chore('fridge');
-new Chore('compost');
-new Chore('landfill');
-new Chore ('recycling');
-new Chore ('curb');
+new Chore('sweep',[]);
+new Chore('dishes',[]);
+new Chore('vacuum',[]);
+new Chore('unload',[]);
+new Chore('load',[]);
+new Chore('tidy',[]);
+new Chore ('laundry',[]);
+new Chore('kitchen',[]);
+new Chore('fridge',[]);
+new Chore('compost',[]);
+new Chore('landfill',[]);
+new Chore ('recycling',[]);
+new Chore ('curb',[]);
 
 // ...........................................................
 // CONSTRUCTOR FUNCTIONS
 
-function User(name){
+function User(name, myChores){
   this.name = name;
+  this.myChores = myChores;
   userList.push(this);
 };
-function Chore(name, des, start, doEvery){
+function Chore(name, assigned){
   this.name = name;
-  this.des = des;
-  this.start = start;
-  this.doEvery = doEvery;
+  this.assigned = [];
+
   choreList.push(this);
+
+// Appends a new li item after each instantiation of new Chore.
   $('#choreList').append(`<li>${this.name}</li>`);
+
+// Appends the checkbox at the end of the chore name.
   $('li').last().append(`<input type="checkbox" id=bibs>`);
 
 };
 
 ////////////////////////////////////////////////////////////////////////
 // WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE //
+
+
+let test = choreList.filter((element, index)=>{
+  return index %2 === 0;
+});
+console.log(test);
+
+
 
 // WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE WORK SPACE //
 //////////////////////////////////////////////////////////////////////
@@ -69,7 +83,7 @@ function Chore(name, des, start, doEvery){
 // EVENT LISTENERS
 // 
 document.getElementById('submit').addEventListener('click', addChore);
-
+// document.getElementById('#bibs').addEventListener('click', choreDone);
 // ...........................................................
 
 // EVENT HANDLERS
@@ -83,5 +97,5 @@ function choreDone(){
   document.getElementById('li').checked = true;
     console.log('OH YIS');
 }
-choreDone();
+// choreDone();
 // ...........................................................
